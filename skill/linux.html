@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux – Amarsya Terano</title>
+  <link rel="icon" href="../img/home/me6.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="skill-detail/linux.css" />
+  <script>
+    // Prevent flash of white
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="skill-navbar">
+    <div class="skill-navbar-inner">
+      <a href="../index.html#hero"><img src="../img/home/Me1.jpeg" alt="Amarsya Terano" class="skill-nav-avatar" /></a>
+      <a href="../index.html#about" class="skill-nav-link">About Me</a>
+      <a href="../index.html#experience" class="skill-nav-link">Experience</a>
+      <a href="../index.html#skills" class="skill-nav-link">Skills</a>
+      <a href="../activity/activity.html" class="skill-nav-link">Activity</a>
+      <a href="../index.html#contact" class="skill-nav-link">Contact</a>
+      <!-- Theme Switcher Desktop -->
+      <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle theme">
+        <svg class="sun-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+    <div class="skill-navbar-mobile">
+    </div>
+    <!-- Mobile floating controls: theme + hamburger dalam satu border -->
+    <div class="skill-floating-controls">
+      <button class="skill-floating-theme" id="themeToggleBtnMobile" title="Toggle theme" aria-label="Toggle theme">
+        <svg class="sun-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <div class="skill-floating-divider"></div>
+      <button class="skill-nav-hamburger" id="skillHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="skill-nav-dropdown" id="skillDropdown">
+      <div class="skill-nav-dropdown-header">
+        <a href="../index.html#hero"><img src="../img/home/Me1.jpeg" alt="Amarsya Terano" class="skill-nav-avatar" style="margin-right:0;" /></a>
+        <button class="skill-nav-dropdown-close" id="skillDropdownClose" aria-label="Close menu">&#10005;</button>
+      </div>
+      <a href="../index.html#about" class="skill-nav-dropdown-link">About Me</a>
+      <a href="../index.html#experience" class="skill-nav-dropdown-link">Experience</a>
+      <a href="../index.html#skills" class="skill-nav-dropdown-link">Skills</a>
+      <a href="../activity/activity.html" class="skill-nav-dropdown-link">Activity</a>
+      <a href="../index.html#contact" class="skill-nav-dropdown-link">Contact</a>
+    </div>
+  </nav>
+
+  <div class="detail-wrap">
+    <div class="detail-top-nav">
+      <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+      <div class="skill-nav-icons">
+        <a href="mikrotik.html" class="skill-nav-icon">Mikrotik</a>
+        <a href="cisco.html" class="skill-nav-icon">Cisco</a>
+        <a href="windows.html" class="skill-nav-icon">Windows</a>
+      </div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-body">
+        <h1 class="detail-title">Linux</h1>
+
+        <img class="detail-img" src="../img/skill/installlinux.avif" alt="Installasi linux" />
+        <p class="detail-text">
+          Saya menggunakan Linux lewat virtual machine dengan Debian 11 sebagai sistem operasinya. Saya memakai Debian 11 karena tampilannya sederhana, ringan, dan cukup nyaman digunakan untuk belajar maupun mencoba berbagai konfigurasi dan perintah Linux. Dengan virtual machine, saya bisa menjalankan Linux tanpa harus menginstalnya langsung di perangkat utama, jadi lebih aman dan fleksibel untuk digunakan..
+        </p>
+        <p class="detail-text">Di sini saya ingin menunjukkan beberapa hal dasar pada Linux yang biasanya perlu dilakukan terlebih dahulu, salah satunya adalah melakukan konfigurasi alamat IP secara manual. Konfigurasi IP ini penting agar perangkat Linux dapat terhubung ke jaringan maupun internet dengan baik.
+Langkah pertama yang dilakukan adalah membuka file konfigurasi network menggunakan terminal dengan perintah: ”nano /etc/network/interfaces”</p>
+        <img class="detail-img" src="../img/skill/buatip.avif" alt="Linux – gambar 2" />
+        <p class="detail-text">Penjelasannya:</p>
+        <ul class="detail-text" style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li>auto eth0 digunakan agar interface jaringan otomatis aktif saat Linux dinyalakan.</li>
+          <li>iface eth0 inet static menandakan bahwa IP yang digunakan bersifat static atau tetap.</li>
+          <li>address merupakan alamat IP yang akan digunakan.</li>
+          <li>netmask digunakan untuk menentukan jaringan.</li>
+          <li>gateway adalah jalur utama untuk terhubung ke jaringan lain atau internet.</li>
+        </ul>
+        <p class="detail-text">Setelah konfigurasi selesai dibuat, tekan CTRL + O untuk menyimpan file lalu CTRL + X untuk keluar dari editor nano.
+Kemudian langkah berikutnya adalah me-restart layanan network agar konfigurasi yang sudah dibuat dapat diterapkan pada sistem Linux. Caranya dengan menggunakan perintah: ”systemctl restart networking” atau “service networking restart” atau juga bisa /etc/init.d/networking restart. Setelah itu cek apakah ip sudah ada atau belum dengan ketik perintah: ”ip a”</p>
+
+        <p class="detail-text">Selanjutnya, agar PC client atau perangkat yang digunakan bisa mendapatkan alamat IP secara otomatis, kita dapat menggunakan DHCP Server. DHCP (Dynamic Host Configuration Protocol) berfungsi untuk membagikan alamat IP secara otomatis kepada setiap client yang terhubung ke jaringan, sehingga kita tidak perlu mengatur IP secara manual satu per satu.
+Pada sistem operasi Linux sebenarnya fitur DHCP Server sudah tersedia, tetapi tidak semua distribusi Linux langsung menyediakan paket DHCP Server secara bawaan. Karena itu, kita perlu menginstalnya terlebih dahulu. Pada Debian 11, paket DHCP Server yang umum digunakan adalah isc-dhcp-server.</p>
+        <p class="detail-text">Untuk menginstalnya, jalankan perintah berikut di terminal:
+apt install isc-dhcp-server - untuk menginstall DHCP Server
+Setelah proses instalasi selesai, kita perlu masuk dan melakukan konfigurasi DHCP Server agar dapat digunakan. Untuk membuka dan mengedit file konfigurasi tersebut, gunakan perintah:</p>
+        <p class="detail-text">
+nano /etc/dhcp/dhcpd.conf</p>
+        <img class="detail-img" src="../img/skill/buatdhcp.avif" alt="Linux – gambar 3" />
+        <p class="detail-text">
+          Di dalam file tersebut kita bisa mengatur range IP, gateway, DNS, dan pengaturan jaringan lainnya sesuai kebutuhan. Setelah konfigurasi selesai, layanan DHCP Server dapat dijalankan atau direstart menggunakan perintah: "systemctl restart isc-dhcp-server"</p>
+        <p class="detail-text">Lalu untuk memastikan layanan DHCP berjalan dengan baik, gunakan perintah: "systemctl status isc-dhcp-server"</p>
+        <p class="detail-text">Dengan menggunakan DHCP Server, proses konfigurasi jaringan menjadi lebih mudah, cepat, dan efisien karena setiap perangkat client akan otomatis mendapatkan alamat IP saat terhubung ke jaringan.</p>
+
+        <img class="detail-img" src="../img/skill/webserver.avif" alt="Linux – gambar 4" />
+        <p class="detail-text">Di sini saya membuat web server menggunakan Apache HTTP Server atau Apache2 pada sistem operasi Linux. Dalam praktik tersebut, saya melakukan instalasi, konfigurasi server, serta menjalankan website agar dapat diakses melalui jaringan. </p>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="skill.js"></script>
+</body>
+</html>

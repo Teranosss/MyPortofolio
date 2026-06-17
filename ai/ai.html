@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chat – Amarsya Terano</title>
+  <link rel="icon" href="../img/home/me6.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ai.css" />
+  <script>
+    // Inline script to prevent theme flashing
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+</head>
+<body>
+
+<div class="ai-layout">
+
+  <!-- Sidebar -->
+  <aside class="ai-sidebar">
+    <div class="ai-sidebar-top">
+      <span class="ai-sidebar-title">Chats</span>
+      <!-- Theme Switcher Desktop -->
+      <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle theme">
+        <svg class="sun-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+
+    <button class="btn-new-chat" id="newChatBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      New Chat
+    </button>
+
+    <div class="sidebar-section-label">Recent</div>
+    <div id="chatHistoryList">
+      <!-- populated by JS -->
+    </div>
+
+    <a href="../index.html" class="sidebar-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+  </aside>
+
+  <!-- Main -->
+  <main class="ai-main">
+    <header class="ai-header">
+      <!-- Mobile: back button -->
+      <a href="../index.html" class="btn-mobile-back" title="Back to Portfolio" style="display:none;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(0,240,255,0.08);border:1.5px solid var(--border);border-radius:8px;color:var(--accent);text-decoration:none;flex-shrink:0;transition:background 0.2s;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+     
+      <div>
+        <div class="ai-header-title">Assistant AI</div>
+        <div class="ai-header-sub">Powered by gemini-flash-lite via Hugging Face</div>
+      </div>
+
+      <!-- Theme Switcher Mobile (visible on mobile only) -->
+      <button class="theme-toggle-btn" id="themeToggleBtnMobile" style="margin-left: auto;" title="Toggle theme">
+        <svg class="sun-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <!-- Mobile: new chat + recent buttons -->
+      <button class="btn-mobile-new" id="mobileNewChatBtn" style="margin-left: 0.5rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        New Chat
+      </button>
+      <button class="btn-mobile-recent" id="mobileRecentBtn" title="Recent chats">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </header>
+
+    <!-- Mobile Recent Drawer — hidden on desktop via CSS -->
+    <div class="mobile-drawer-overlay" id="drawerOverlay" style="display:none;"></div>
+    <div class="mobile-drawer" id="mobileDrawer" style="display:none;">
+      <div class="mobile-drawer-header">
+        <span class="mobile-drawer-title">Recent Chats</span>
+        <button class="mobile-drawer-close" id="drawerClose">&#10005;</button>
+      </div>
+      <button class="btn-new-chat" id="drawerNewChatBtn" style="width:100%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        New Chat
+      </button>
+      <div class="sidebar-section-label">Recent</div>
+      <div id="drawerHistoryList" style="overflow-y:auto;flex:1;"></div>
+      <a href="../index.html" class="sidebar-back" style="margin-top:auto;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Portfolio
+      </a>
+    </div>
+
+    <div class="ai-messages" id="chatMessages">
+      <!-- Welcome state -->
+      <div class="ai-welcome" id="welcomeState">
+        <div class="ai-welcome-icon">✦</div>
+        <h2>Tanya Seputar Orang Ini</h2>
+        <p>Saya bisa membantu menjawab pertanyaan dan menjelaskan seputar web ini</p>
+        <div class="ai-suggestions">
+          <div class="ai-chip" onclick="useChip(this)">Apa isi dari web ini?</div>
+          <div class="ai-chip" onclick="useChip(this)">Siapa orang ini?</div>
+          <div class="ai-chip" onclick="useChip(this)">Pengalaman apa saja yang orang ini miliki</div>
+          <div class="ai-chip" onclick="useChip(this)">Punya skills apa saja</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-input-wrap">
+      <div class="ai-input-box">
+        <textarea
+          class="ai-textarea"
+          id="userInput"
+          placeholder="Tanya Apa Saja..."
+          rows="1"
+        ></textarea>
+        <button class="ai-send-btn" id="sendBtn" title="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <div class="ai-input-hint">AI ini bisa saja salah. Verifikasi info penting di web utama.</div>
+    </div>
+  </main>
+
+</div>
+
+<script src="ai.js"></script>
+<script>
+  // iOS Safari viewport height fix
+  // Safari menggunakan tinggi termasuk address bar untuk 100vh/dvh
+  // --vh diset ke tinggi window yang sesungguhnya dan di-update saat resize
+  function setVh() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  }
+  setVh();
+  window.addEventListener('resize', setVh);
+  // Juga update saat orientasi berubah
+  window.addEventListener('orientationchange', function() {
+    setTimeout(setVh, 200);
+  });
+</script>
+</body>
+</html>
