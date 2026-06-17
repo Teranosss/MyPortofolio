@@ -1091,7 +1091,27 @@ img { display: block; max-width: 100%; }
   font-weight: 700; font-size: 0.95rem;
   letter-spacing: 1px; text-align: center;
 }
-
+.click-hint {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all var(--transition);
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
+}
+.skill-card:hover .click-hint {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(0, 240, 255, 0.05);
+}
+[data-theme="light"] .skill-card:hover .click-hint {
+  background: rgba(0, 102, 255, 0.05);
+}
 /* Preview image di atas skill card */
 .skill-card-preview {
   width: 100%;
