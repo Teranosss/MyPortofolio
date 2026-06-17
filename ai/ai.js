@@ -1,7 +1,6 @@
 // ── BACKEND URL ──
-// Development : http://localhost:8000/chat
-// Production  : ganti dengan URL backend yang sudah deploy
-const BACKEND_URL = '';
+
+const BACKEND_URL = 'https://teranosss-backendai.hf.space/chat';
 
 const messagesEl  = document.getElementById('chatMessages');
 const welcomeEl   = document.getElementById('welcomeState');
