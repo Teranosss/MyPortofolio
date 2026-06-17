@@ -1,6 +1,6 @@
 // ── BACKEND URL ──
 
-const BACKEND_URL = 'https://teranosss-beckendaiweb.hf.space/chat';
+const BACKEND_URL = 'https://teranosss-beckendaiweb.hf.space/';
 
 const messagesEl  = document.getElementById('chatMessages');
 const welcomeEl   = document.getElementById('welcomeState');
